@@ -6,7 +6,7 @@ import img3 from "../../public/images/carousel-3.jpg";
 
 export default function Home(){
   return (
-    <RootLayout> {/* everything inside of layout is part of props.children*/}
+    <RootLayout> 
       <div className="w-full overflow-auto">
         {/* Hero Section */}
         <section className="py-12 px-6 bg-gray-100 text-center">

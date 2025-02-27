@@ -14,7 +14,7 @@ export default function Nav() {
                 {/* Brand */}
                 <Link href="/" className="flex items-center space-x-3">
                 <img 
-                    src={img}
+                    src={img.src}
                     alt="Kit Collective Logo" 
                     className="w-10 h-10 object-cover rounded-xl" 
                 />
