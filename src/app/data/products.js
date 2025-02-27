@@ -1,7 +1,7 @@
-const img1 = "/images/product-1.jpg";
-const img2 = "/images/product-2.jpg";
-const img3 = "/images/product-3.jpg";
-const img4 = "/images/product-4.jpg";
+import img1 from "../../../public/images/product-1.jpg";
+import img2 from "../../../public/images/product-2.jpg";
+import img3 from "../../../public/images/product-3.jpg";
+import img4 from "../../../public/images/product-4.jpg";
 
 const products = [
  {

@@ -1,6 +1,6 @@
-const img1 = "/images/aboutteam-1.jpg";
-const img2 = "/images/aboutteam-2.jpg";
-const img3 = "/images/aboutteam-3.jpg";
+import img1 from "../../../public/images/aboutteam-1.jpg";
+import img2 from "../../../public/images/aboutteam-2.jpg";
+import img3 from "../../../public/images/aboutteam-3.jpg";
 
 
 const teammembers = [

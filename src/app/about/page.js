@@ -1,11 +1,10 @@
 import RootLayout from "../layout"
 import Image from "next/image";
 import teammembers from "../data/teammembers";
+import img1 from "../../public/images/about-1.jpg";
+import img2 from "../../public/images/about-2.jpg";
 
-export default function About(){
-  const img1 = "/images/about-1.jpg";
-  const img2 = "/images/about-2.jpg";
-  
+export default function About(){  
   return (
     <RootLayout> {/* everything inside of layout is part of props.children*/}
         <div className="w-full overflow-auto">
