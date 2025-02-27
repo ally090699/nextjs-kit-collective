@@ -1,19 +1,25 @@
-export default function Card({img, title, pcode, desc}){
-    return(
-        <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition p-6 w-2/3 sm:w-[300px] md:w-[250px]">
-            <img 
-                src={img} 
-                alt={`Crochet ${title}`} 
-                className="w-full h-60 object-cover rounded-lg"
-            />
-            <div className="mt-4 text-center">
-                <h5 className="text-lg font-bold text-gray-800">{title}</h5>
-                <p className="text-sm text-gray-500">Product Code: {pcode}</p>
-                <p className="mt-2 text-gray-600">{desc}</p>
-                <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">
-                Add to Cart
-                </button>
-            </div>
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import Link from 'next/link';
+
+export default function Card({ id, img, title, category, price, pcode, desc }) {
+  return (
+    <Link href={`/products/${id}`} className="block">
+      <div className="bg-white rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-100 transition p-6 sm:w-[300px] md:w-[250px] flex flex-col min-h-[400px]">
+        <img
+          src={img}
+          alt={`Crochet ${title}`}
+          className="w-full h-56 object-cover rounded-lg mb-4"
+        />
+        <div className="text-center flex-grow">
+          <h5 className="text-lg font-bold text-gray-800">{title}</h5>
+          <h6 className="text-md font-bold text-gray-600">{price}</h6>
         </div>
-    );
+        <div className="flex justify-center">
+          <button className="mt-auto bg-blue-400 text-white p-2 rounded-md hover:bg-blue-600 transition">
+            Add to Cart <AddBoxIcon />
+          </button>
+        </div>
+      </div>
+    </Link>
+  );
 }

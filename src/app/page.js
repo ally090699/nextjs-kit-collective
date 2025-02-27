@@ -7,9 +7,9 @@ import img3 from "../../public/images/carousel-3.jpg";
 export default function Home(){
   return (
     <RootLayout> 
-      <div className="w-full overflow-auto">
+      <div className="w-full">
         {/* Hero Section */}
-        <section className="py-12 px-6 bg-gray-100 text-center">
+        <section className="py-12 px-6 bg-gray-100 text-center w-full">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-800">Welcome to Kit Collective!</h2>
             <p className="text-lg text-gray-700 mt-4">Your go-to destination for all things crochet.</p>
@@ -18,7 +18,7 @@ export default function Home(){
 
         {/* Carousel Section */}
         <section className="py-12 bg-white flex justify-center items-center">
-          <div className="max-w-3xl w-full">
+          <div className="w-full">
             <Carousel 
               img1={img1} alt1="Soft Beige Wool Yarn Balls"
               img2={img2} alt2="Octopus Amigurumi Final Product"

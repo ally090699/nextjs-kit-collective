@@ -34,8 +34,8 @@ export default function Carousel({img1, alt1, img2, alt2, img3, alt3}) {
         </SwiperSlide>
       </Swiper>
 
-      <div className="swiper-button-prev absolute top-[57%] left-4 transform -translate-y-1/2 text-black bg-white/30 p-2 rounded-full opacity-50 hover:opacity-100 transition duration-300"></div>
-      <div className="swiper-button-next absolute top-[57%] right-4 transform -translate-y-1/2 text-black bg-white/30 p-2 rounded-full opacity-50 hover:opacity-100 transition duration-300"></div>
+      <div className="swiper-button-prev absolute top-[57%] md:top-[63%] lg:top-[69%] left-4 transform -translate-y-1/2 text-black bg-white/30 p-2 rounded-full opacity-50 hover:opacity-100 transition duration-300"></div>
+      <div className="swiper-button-next absolute top-[57%] md:top-[63%] lg:top-[69%] right-4 transform -translate-y-1/2 text-black bg-white/30 p-2 rounded-full opacity-50 hover:opacity-100 transition duration-300"></div>
     </div>
   );
 }
