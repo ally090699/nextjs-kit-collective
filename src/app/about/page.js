@@ -1,8 +1,8 @@
 import RootLayout from "../layout"
 import Image from "next/image";
 import teammembers from "../data/teammembers";
-import img1 from "../../public/images/about-1.jpg";
-import img2 from "../../public/images/about-2.jpg";
+import img1 from "../../../public/images/about-1.jpg";
+import img2 from "../../../public/images/about-2.jpg";
 
 export default function About(){  
   return (

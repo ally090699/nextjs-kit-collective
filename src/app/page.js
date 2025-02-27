@@ -1,8 +1,8 @@
 import RootLayout from "./layout";
 import Carousel from "./components/carousel";
-import img1 from "../public/images/carousel-1.jpg";
-import img2 from "../public/images/carousel-2.jpg";
-import img3 from "../public/images/carousel-3.jpg";
+import img1 from "../../public/images/carousel-1.jpg";
+import img2 from "../../public/images/carousel-2.jpg";
+import img3 from "../../public/images/carousel-3.jpg";
 
 export default function Home(){
   return (
