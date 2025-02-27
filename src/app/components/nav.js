@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import img from "/images/banner.jpg";
+import img from "../../../public/images/banner.jpg";
 export default function Nav() {
     
 
