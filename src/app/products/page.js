@@ -5,9 +5,9 @@ import products from "../data/products"
 export default function Products(){
   return (
     <RootLayout> {/* everything inside of layout is part of props.children*/}
-        <div className="w-full bg-gray-100 py-12">
+        <div className="w-full bg-gray-100 flex py-12">
           {/* Products Section */}
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-6xl justify-center mx-auto px-6">
             <h4 className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-2 mb-8">
               <span role="img" aria-label="Yarn emoji">🧶</span> Products
             </h4>

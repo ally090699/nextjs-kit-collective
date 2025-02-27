@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
           />
-
+          <link rel="icon" href="/favicon.ico" type="image/x-icon"></link>
           <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       </Head>
       <body>

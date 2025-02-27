@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
-
+import img from "../../../public/images/banner.jpg";
 export default function Nav() {
-    const img = "/images/banner.jpg";
+    
 
     const [isOpen, setIsOpen] = useState(false);
 
