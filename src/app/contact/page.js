@@ -283,7 +283,7 @@ export default function Contact() {
                   type="submit"
                   className="px-6 py-3 bg-blue-400 text-white rounded-md hover:bg-blue-500 focus:outline-none"
                 >
-                  Send
+                  Submit
                 </button>
               </div>
             </div>

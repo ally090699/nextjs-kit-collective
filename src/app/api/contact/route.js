@@ -5,8 +5,12 @@ const prisma = new PrismaClient();
 
 export async function POST(req) {
   try {
+    
+    console.log("API route /api/contact called");
     const body = await req.json();
-
+    console.log("Request body:", body);
+    console.log("DATABASE_URL:", process.env.DATABASE_URL);
+    
     if (!body) {
       return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
     }
@@ -24,6 +28,7 @@ export async function POST(req) {
     });
 
     return NextResponse.json({ message: "Submission successful!", submission }, { status: 200 });
+  
   } catch (error) {
     console.error("Error submitting form:", error);
     return NextResponse.json({ error: "Failed to submit form" }, { status: 500 });
