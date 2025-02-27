@@ -21,9 +21,19 @@ export async function POST(req) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
+    const reasonMap = {
+      "generalinquiry": "General Inquiry",
+      "pricing": "Pricing",
+      "productinfo": "Product Info",
+      "shipping": "Shipping",
+      "other": "Other"
+    };
+
+    let fixStatus = reasonMap[status.toLowerCase().replace(/\s/g, "")];
+
     // Create submission in MySQL database
     const submission = await prisma.submissions.create({
-      data: { name, phone, email, reason: status, productId: productID, message },
+      data: { name, phone, email, reason: fixStatus, product_id: productID, message },
     });
 
     return NextResponse.json({ message: "Submission successful!", submission }, { status: 200 });
