@@ -134,7 +134,8 @@ export default function Contact() {
     }
   
     try {
-      const response = await fetch("/api/contact", {
+      const url = "https://nextjs-kit-collective.onrender.com";
+      const response = await fetch(`${url}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validData),

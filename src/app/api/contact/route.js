@@ -5,13 +5,12 @@ const prisma = new PrismaClient();
 
 export async function POST(req) {
   try {
-    
     console.log("API route /api/contact called");
     const body = await req.json();
     console.log("Request body:", body);
     console.log("DATABASE_URL:", process.env.DATABASE_URL);
     
-    if (!body) {
+    /*if (!body) {
       return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
     }
 
@@ -25,7 +24,7 @@ export async function POST(req) {
     // Create submission in MySQL database
     const submission = await prisma.submissions.create({
       data: { name, phone, email, reason: status, productId: productID, message },
-    });
+    });*/
 
     return NextResponse.json({ message: "Submission successful!", submission }, { status: 200 });
   
