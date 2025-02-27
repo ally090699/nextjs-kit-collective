@@ -14,12 +14,20 @@ datasource db {
 }
 
 model submissions {
-  id          Int     @id @default(autoincrement())
+  submission_id          Int     @id @default(autoincrement())
   name        String  @db.VarChar(50)
   phone       String? @db.VarChar(20)
   email       String  @db.VarChar(50)
-  reason      String  @db.VarChar(20)
-  productId   String? @db.VarChar(10)
+  reason      String  @db.Enum("ReasonType")
+  product_id   String? @db.VarChar(10)
   message     String  @db.Text
-  submittedAt DateTime @default(now())
+  submitted_at DateTime @default(now())
+}
+
+enum ReasonType {
+  General_Inquiry
+  Pricing
+  Product_Info
+  Shipping
+  Other
 }
