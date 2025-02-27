@@ -140,6 +140,8 @@ export default function Contact() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validData),
       });
+
+      console.log(response);
   
       if (!response.ok) {
         throw new Error("Server Error");
