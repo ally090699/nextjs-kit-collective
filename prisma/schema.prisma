@@ -18,7 +18,7 @@ model submissions {
   name        String  @db.VarChar(50)
   phone       String? @db.VarChar(20)
   email       String  @db.VarChar(50)
-  reason      String  @db.Enum("ReasonType")
+  reason      String  @db.VarChar(20)
   product_id   String? @db.VarChar(10)
   message     String  @db.Text
   submitted_at DateTime @default(now())
