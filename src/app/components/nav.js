@@ -26,7 +26,7 @@ export default function Nav() {
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex space-x-6">
+                <div className="hidden md:flex md:items-center space-x-6">
                     <Link href="/" className="text-white hover:text-blue-300 hover:underline transition">Home</Link>
                     <Link href="/about" className="text-white hover:text-blue-300 hover:underline transition">About</Link>
                     <Link href="/products" className="text-white hover:text-blue-300 hover:underline transition">Products</Link>
