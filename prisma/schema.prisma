@@ -13,6 +13,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model users {
+  user_id      Int        @id @default(autoincrement())
+  username     String     @unique @db.VarChar(255)
+  email        String     @unique @db.VarChar(255)
+  password_hash  String    @db.VarChar(255)
+  first_name   String?    @db.VarChar(255)
+  last_name    String?    @db.VarChar(255)
+  phone_number   String?    @db.VarChar(20)
+  created_at   DateTime   @default(now())
+  updated_at   DateTime   @updatedAt
+}
+
+model products {
+  product_id  Int       @id @default(autoincrement())
+  name        String    @db.VarChar(255)
+  description String    @db.Text
+  price       Decimal   @db.Decimal
+  category    String    @db.VarChar(255)
+  image_url   String    @db.VarChar(255)
+  pcode       String    @db.VarChar(255)
+}
+
+model product_reviews {
+  review_id          Int       @id @default(autoincrement())
+  product_id   Int       
+  user_id      Int
+  rating      Int       
+  comment     String    @db.Text
+  createdAt   DateTime  @default(now())
+}
+
 model submissions {
   submission_id          Int     @id @default(autoincrement())
   name        String  @db.VarChar(50)

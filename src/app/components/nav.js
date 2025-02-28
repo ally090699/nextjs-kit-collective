@@ -3,8 +3,8 @@ import { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import img from "../../../public/images/banner.jpg";
+
 export default function Nav() {
-    
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -27,10 +27,12 @@ export default function Nav() {
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-6">
-                <Link href="/" className="text-white hover:text-blue-300 transition">Home</Link>
-                <Link href="/about" className="text-white hover:text-blue-300 transition">About</Link>
-                <Link href="/products" className="text-white hover:text-blue-300 transition">Products</Link>
-                <Link href="/contact" className="text-white hover:text-blue-300 transition">Contact</Link>
+                    <Link href="/" className="text-white hover:text-blue-300 hover:underline transition">Home</Link>
+                    <Link href="/about" className="text-white hover:text-blue-300 hover:underline transition">About</Link>
+                    <Link href="/products" className="text-white hover:text-blue-300 hover:underline transition">Products</Link>
+                    <Link href="/contact" className="text-white hover:text-blue-300 hover:underline transition">Contact</Link>
+                    <Link href="/signin" className="block text-center text-gray-200 hover:text-blue-300 hover:underline py-2">Sign In</Link>
+                    <Link href="/register" className="block text-center text-gray-200 hover:text-blue-300 hover:underline py-2">Register</Link>
                 </div>
 
                 {/* Mobile Menu Toggle Button */}
@@ -47,10 +49,12 @@ export default function Nav() {
             <div
                 className={`md:hidden ${isOpen ? "block" : "hidden"} bg-gray-900 text-gray-200 py-2 mt-2`}
             >
-                <Link href="/" className="block text-center text-gray-200 hover:text-blue-300 py-2">Home</Link>
-                <Link href="/about" className="block text-center text-gray-200 hover:text-blue-300 py-2">About</Link>
-                <Link href="/products" className="block text-center text-gray-200 hover:text-blue-300 py-2">Products</Link>
-                <Link href="/contact" className="block text-center text-gray-200 hover:text-blue-300 py-2">Contact</Link>
+                <Link href="/" className="block text-center text-gray-200 hover:text-blue-300 hover:underline py-2">Home</Link>
+                <Link href="/about" className="block text-center text-gray-200 hover:text-blue-300 hover:underline py-2">About</Link>
+                <Link href="/products" className="block text-center text-gray-200 hover:text-blue-300 hover:underline py-2">Products</Link>
+                <Link href="/contact" className="block text-center text-gray-200 hover:text-blue-300 hover:underline py-2">Contact</Link>
+                <Link href="/signin" className="block text-center text-gray-200 hover:text-blue-300 hover:underline py-2">Sign In</Link>
+                <Link href="/register" className="block text-center text-gray-200 hover:text-blue-300 hover:underline py-2">Register</Link>
             </div>
         </nav>
     );
