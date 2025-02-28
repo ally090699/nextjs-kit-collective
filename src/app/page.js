@@ -17,7 +17,7 @@ export default function Home(){
         </section>
 
         {/* Carousel Section */}
-        <section className="py-12 flex justify-center items-center bg-red-200">
+        <section className="py-12 bg-white flex justify-center items-center">
           <div className="w-full">
             <Carousel 
               img1={img1} alt1="Soft Beige Wool Yarn Balls"

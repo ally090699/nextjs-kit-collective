@@ -25,13 +25,13 @@ export default function Carousel({img1, alt1, img2, alt2, img3, alt3}) {
           }}
         >
           <SwiperSlide className="flex justify-center">
-            <Image src={img1} alt={alt1} width={1000} height={300} className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl object-cover rounded-lg shadow-lg"/>
+            <Image src={img1} alt={alt1} width={1000} height={300} className="w-full flex justify-center h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl object-cover rounded-lg shadow-lg"/>
           </SwiperSlide>
           <SwiperSlide className="flex justify-center">
-            <Image src={img2} alt={alt2} width={1000} height={300} className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl object-cover rounded-lg shadow-lg"/>
+            <Image src={img2} alt={alt2} width={1000} height={300} className="w-full flex justify-center h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl object-cover rounded-lg shadow-lg"/>
           </SwiperSlide>
           <SwiperSlide className="flex justify-center">
-            <Image src={img3} alt={alt3} width={1000} height={300} className="w-full h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl object-cover rounded-lg shadow-lg"/>
+            <Image src={img3} alt={alt3} width={1000} height={300} className="w-full flex justify-center h-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl object-cover rounded-lg shadow-lg"/>
           </SwiperSlide>
         </Swiper>
 
