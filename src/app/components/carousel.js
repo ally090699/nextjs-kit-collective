@@ -8,8 +8,8 @@ import Image from 'next/image';
 
 export default function Carousel({img1, alt1, img2, alt2, img3, alt3}) {
   return (
-    <div>
-      <div className="mx-auto max-w-7xl">
+    <div className="mx-auto">
+      <div style={{ width: '80%' }} className="mx-auto">
         <Swiper
           modules={[Navigation]}   
           spaceBetween={50}        
