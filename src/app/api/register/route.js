@@ -8,7 +8,6 @@ export async function POST(req) {
     console.log("API route /api/register called");
     const body = await req.json();
     console.log("Request body:", body);
-    console.log("DATABASE_URL:", process.env.DATABASE_URL);
     
     if (!body) {
       return NextResponse.json({ error: "Invalid request body" }, { status: 400 });

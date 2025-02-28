@@ -148,7 +148,7 @@ export default function Register() {
   
     try {
       const hashedPassword = await bcrypt.hash(formData.password, 10);
-      const url = "http://localhost:3000";
+      const url = "https://nextjs-kit-collective.onrender.com";
       const response = await fetch(`${url}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
