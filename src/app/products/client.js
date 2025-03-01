@@ -170,7 +170,7 @@ export default function Client({products}){
                   <label className="flex items-center text-gray-500 ">
                     <input type="radio" name="rating" className="mr-2" id="0" 
                     checked={rating==0}
-                    onChange={handleRating} defaultChecked/>
+                    onChange={handleRating}/>
                     <span>☆☆☆☆☆ & Up</span>
                   </label>
                 </div>
@@ -186,7 +186,8 @@ export default function Client({products}){
               
               {/* Product Grid */}
               <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 grid-rows-auto">
-                {filteredProducts.map((product) => (
+                {filteredProducts.length>0 ? (
+                  filteredProducts.map((product) => (
                     <Card 
                         key={product.product_id}
                         id={product.product_id}
@@ -195,7 +196,12 @@ export default function Client({products}){
                         price={product.price}
                         avgrating={product.averageRating}
                     />
-                ))}
+                  ))
+                ) : (
+                    <div>
+                      <h3 className="text-gray-500 ">No items matching your search.</h3>
+                    </div>
+                )}
                 </div>
             </div>
 
