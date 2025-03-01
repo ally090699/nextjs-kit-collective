@@ -28,10 +28,7 @@ export default async function Products() {
             price: product.price.toNumber(),
             averageRating: averageRating,
         };
-    });
-    
-    console.log(productsWithAverageRating);
-    
+    });    
 
     return <Client products={productsWithAverageRating} />;
 }

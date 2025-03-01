@@ -1,9 +1,10 @@
 "use client";
 
 import "./globals.css";
-import Head from 'next/head'
-import Nav from "./components/nav"
+import Head from 'next/head';
+import Nav from "./components/nav";
 import Footer from "./components/footer";
+import { SessionProvider } from "next-auth/react";
 
 export default function RootLayout({ children }) {
   return (
@@ -19,9 +20,11 @@ export default function RootLayout({ children }) {
           <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       </Head>
       <body>
-        <Nav/>
-        {children}
-        <Footer/>
+        <SessionProvider>
+          <Nav/>
+          {children}
+          <Footer/>
+        </SessionProvider>
       </body>
     </html>
   );

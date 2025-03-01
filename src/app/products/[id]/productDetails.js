@@ -4,7 +4,6 @@ import RootLayout from '../../layout';
 import { rating } from '@/app/utils/ratings';
 
 export default function ProductDetailsPage({ product }) {
-    console.log(product);
     return (
         <RootLayout>
             <div className="p-4 sm:p-6 flex flex-col sm:flex-row justify-center bg-white shadow-lg hover:shadow-xl transition w-full">

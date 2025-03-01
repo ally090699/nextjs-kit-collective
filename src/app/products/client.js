@@ -11,6 +11,7 @@ export default function Client({products}){
     min: 0,
     max: Infinity
   });
+  const [rating, setRating] = useState(null);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -21,7 +22,13 @@ export default function Client({products}){
     const searchMatch = product.name.toLowerCase().includes(search.toLowerCase());
     const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(product.category);
     const priceMatch = product.price >= price.min && product.price <= price.max;
-    return searchMatch && categoryMatch && priceMatch;
+    let ratingMatch = true;
+
+    if (rating!==null){
+      ratingMatch = Math.round(product.averageRating) >= rating;
+    }
+
+    return searchMatch && categoryMatch && priceMatch && ratingMatch;
 });
 
   const handleCategory = (category) => {
@@ -46,12 +53,18 @@ export default function Client({products}){
     });
   }
 
+  const handleRating = (e) => {
+    e.persist();
+    setRating(e.target.id);
+  };
+
   function clearFilters(){
     setSelectedCategories([]);
     setPrice({
       min: 0,
       max: Infinity
     })
+    setRating(0);
   }
 
   return (
@@ -135,20 +148,28 @@ export default function Client({products}){
                 <div className="mb-4">
                   <h4 className="text-sm font-medium mb-2 text-gray-700">Rating</h4>
                   <label className="flex items-center text-gray-500 ">
-                    <input type="radio" name="rating" className="mr-2" />
+                    <input type="radio" name="rating" className="mr-2" id="5" onChange={handleRating}/>
+                    <span>★★★★★ & Up</span>
+                  </label>
+                  <label className="flex items-center text-gray-500 ">
+                    <input type="radio" name="rating" className="mr-2" id="4" onChange={handleRating}/>
                     <span>★★★★☆ & Up</span>
                   </label>
                   <label className="flex items-center text-gray-500 ">
-                    <input type="radio" name="rating" className="mr-2" />
+                    <input type="radio" name="rating" className="mr-2" id="3" onChange={handleRating}/>
                     <span>★★★☆☆ & Up</span>
                   </label>
                   <label className="flex items-center text-gray-500 ">
-                    <input type="radio" name="rating" className="mr-2" />
+                    <input type="radio" name="rating" className="mr-2" id="2" onChange={handleRating}/>
                     <span>★★☆☆☆ & Up</span>
                   </label>
                   <label className="flex items-center text-gray-500 ">
-                    <input type="radio" name="rating" className="mr-2" />
+                    <input type="radio" name="rating" className="mr-2" id="1" onChange={handleRating}/>
                     <span>★☆☆☆☆ & Up</span>
+                  </label>
+                  <label className="flex items-center text-gray-500 ">
+                    <input type="radio" name="rating" className="mr-2" id="0" onChange={handleRating} defaultChecked/>
+                    <span>☆☆☆☆☆ & Up</span>
                   </label>
                 </div>
 
