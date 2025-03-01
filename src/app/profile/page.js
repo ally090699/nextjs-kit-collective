@@ -6,6 +6,7 @@ import { useState } from "react";
 import { isValidPhoneNumber } from 'libphonenumber-js';
 import { rating } from "../utils/ratings";
 import { API_BASE_URL } from "../utils/constants";
+import RootLayout from "../layout";
 
 export default function Profile() {
   const { data: session, status } = useSession();
