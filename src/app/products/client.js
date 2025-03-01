@@ -11,7 +11,7 @@ export default function Client({products}){
     min: 0,
     max: Infinity
   });
-  const [rating, setRating] = useState(null);
+  const [rating, setRating] = useState(0);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -168,7 +168,9 @@ export default function Client({products}){
                     <span>★☆☆☆☆ & Up</span>
                   </label>
                   <label className="flex items-center text-gray-500 ">
-                    <input type="radio" name="rating" className="mr-2" id="0" onChange={handleRating} defaultChecked/>
+                    <input type="radio" name="rating" className="mr-2" id="0" 
+                    checked={rating==0}
+                    onChange={handleRating} defaultChecked/>
                     <span>☆☆☆☆☆ & Up</span>
                   </label>
                 </div>
