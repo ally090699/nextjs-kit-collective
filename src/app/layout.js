@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-          <title>Home Page</title>
+          <title>Kit Collective</title>
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"

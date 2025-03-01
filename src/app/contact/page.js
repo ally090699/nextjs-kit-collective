@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/compat/router';
 import RootLayout from "../layout";
+import { API_BASE_URL } from '../utils/constants';
 
 export default function Contact() {
   const router = useRouter();
@@ -134,8 +135,7 @@ export default function Contact() {
     }
   
     try {
-      const url = "https://nextjs-kit-collective.onrender.com";
-      const response = await fetch(`${url}/api/contact`, {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validData),

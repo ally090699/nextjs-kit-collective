@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/compat/router';
 import RootLayout from "../layout";
 import bcrypt from 'bcryptjs';
+import { API_BASE_URL } from '../utils/constants';
 
 export default function Signin() {
   const router = useRouter();
@@ -25,11 +26,7 @@ export default function Signin() {
 
     try {
       const hashedPassword = await bcrypt.hash(formData.password, 10);
-
-      // http://localhost:3000
-      // https://nextjs-kit-collective.onrender.com
-      const url = "https://nextjs-kit-collective.onrender.com";
-      const response = await fetch(`${url}/api/signin`, {
+      const response = await fetch(`${API_BASE_URL}/api/signin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({username: formData.username, password: hashedPassword}),

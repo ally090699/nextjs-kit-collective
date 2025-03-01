@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from 'bcryptjs';
-
+//import {cookies} from 'next/headers';
+//import crypto from 'crypto';
 
 const prisma = new PrismaClient();
 
@@ -36,6 +37,25 @@ export async function POST(req) {
     if (!passwordMatch) {
         return NextResponse.json({ error: "Invalid password" }, { status: 401 });
     }
+    /*else {  // create user associated session
+      const sessionId = crypto.randomUUID();
+      const expiresAt = new Date(Date.now() + 24*60*60*1000);   //24 hours
+
+      await prisma.sessions.create({
+        data: {
+          session_id: sessionId,
+          user_id: user.user_id,
+          expires_at: expiresAt,
+        }
+      });
+
+      (await cookies()).set('sessionID', sessionId, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV==='production',
+        sameSite:'strict',
+        path: '/',
+      });
+    }*/
   
     return NextResponse.json({ message: "Sign in successful!", user }, { status: 200 });
   

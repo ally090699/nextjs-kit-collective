@@ -14,51 +14,63 @@ datasource db {
 }
 
 model users {
-  user_id      Int        @id @default(autoincrement())
-  username     String     @unique @db.VarChar(255)
-  email        String     @unique @db.VarChar(255)
-  password_hash  String    @db.VarChar(255)
-  first_name   String?    @db.VarChar(255)
-  last_name    String?    @db.VarChar(255)
-  phone_number   String?    @db.VarChar(20)
-  created_at   DateTime   @default(now())
-  updated_at   DateTime   @updatedAt
+  user_id       Int       @id @default(autoincrement())
+  username      String    @unique @db.VarChar(255)
+  email         String    @unique @db.VarChar(255)
+  password_hash String    @db.VarChar(255)
+  first_name    String?   @db.VarChar(255)
+  last_name     String?   @db.VarChar(255)
+  phone_number  String?   @db.VarChar(20)
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  product_reviews product_reviews[]
+  sessions sessions[]
 }
 
 model products {
-  product_id  Int       @id @default(autoincrement())
-  name        String    @db.VarChar(255)
-  description String    @db.Text
-  price       Decimal   @db.Decimal
-  category    String    @db.VarChar(255)
-  image_url   String    @db.VarChar(255)
-  pcode       String    @db.VarChar(255)
+  product_id      Int       @id @default(autoincrement())
+  name            String    @db.VarChar(255)
+  description     String    @db.Text
+  price           Decimal   @db.Decimal(10,2)
+  category        String    @db.VarChar(255)
+  image_url       String    @db.VarChar(255)
+  pcode           String    @db.VarChar(255)
+  product_reviews product_reviews[]
 }
 
 model product_reviews {
-  review_id          Int       @id @default(autoincrement())
-  product_id   Int       
-  user_id      Int
-  rating      Int       
-  comment     String    @db.Text
-  createdAt   DateTime  @default(now())
+  review_id   Int      @id @default(autoincrement())
+  product_id  Int      @db.Int
+  user_id     Int      @db.Int
+  rating      Int      @db.Int
+  comment     String   @db.Text
+  createdAt   DateTime @default(now())
+  product     products @relation(fields: [product_id], references: [product_id])
+  user        users    @relation(fields: [user_id], references: [user_id])
 }
 
 model submissions {
-  submission_id          Int     @id @default(autoincrement())
-  name        String  @db.VarChar(50)
-  phone       String? @db.VarChar(20)
-  email       String  @db.VarChar(50)
-  reason      String  @db.VarChar(20)
-  product_id   String? @db.VarChar(10)
-  message     String  @db.Text
-  submitted_at DateTime @default(now())
+  submission_id Int        @id @default(autoincrement())
+  name          String     @db.VarChar(50)
+  phone         String?    @db.VarChar(20)
+  email         String     @db.VarChar(50)
+  reason        ReasonType 
+  product_id    String?    @db.VarChar(10)
+  message       String     @db.Text
+  submitted_at  DateTime   @default(now())
 }
 
 enum ReasonType {
-  General_Inquiry
-  Pricing
-  Product_Info
-  Shipping
-  Other
+  General_Inquiry @map("General_Inquiry")
+  Pricing @map("Pricing")
+  Product_Info @map("Product_Info")
+  Shipping @map("Shipping")
+  Other @map("Other")
+}
+
+model sessions {
+  session_id String   @id @db.VarChar(255)
+  user_id    Int
+  expires_at DateTime?
+  user       users    @relation(fields: [user_id], references: [user_id])
 }

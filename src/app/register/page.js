@@ -5,6 +5,7 @@ import { useRouter } from 'next/compat/router';
 import RootLayout from "../layout";
 import bcrypt from 'bcryptjs';
 import { isValidPhoneNumber } from 'libphonenumber-js';
+import { API_BASE_URL } from '../utils/constants';
 
 export default function Register() {
   const router = useRouter();
@@ -148,8 +149,7 @@ export default function Register() {
   
     try {
       const hashedPassword = await bcrypt.hash(formData.password, 10);
-      const url = "https://nextjs-kit-collective.onrender.com";
-      const response = await fetch(`${url}/api/register`, {
+      const response = await fetch(`${API_BASE_URL}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
